@@ -175,7 +175,70 @@ td .story { font-family: var(--font-mono); font-size: 12px; color: var(--accent)
 .meter { height: 6px; background: var(--line); border-radius: 99px; overflow: hidden; margin-bottom: 14px; }
 .meter i { display: block; height: 100%; background: var(--ok); width: 0; transition: width .3s; }
 footer { color: var(--muted); font-size: 13px; padding-block: 0 40px; }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .meter i { transition: none; } }
+/* Quiz */
+.cta { display: inline-block; margin-top: 18px; font: 600 15px var(--font-body); background: var(--accent); color: var(--paper); text-decoration: none; border-radius: 10px; padding: 11px 18px; }
+.cta:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+nav.bar a.navq { color: var(--accent); font-weight: 700; }
+.quiz { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 20px; }
+.qz-setup { display: grid; gap: 18px; }
+.qz-label { font-family: var(--font-mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin: 0 0 8px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { font: 500 14px var(--font-body); color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; cursor: pointer; }
+.chip .cnt { font-family: var(--font-mono); font-size: 11px; color: var(--muted); margin-left: 2px; }
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--paper); }
+.chip[aria-pressed="true"] .cnt { color: var(--paper); opacity: .8; }
+.qz-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn { font: 600 15px var(--font-body); color: var(--accent); background: var(--accent-soft); border: 1px solid transparent; border-radius: 10px; padding: 10px 16px; cursor: pointer; }
+.btn.primary { background: var(--accent); color: var(--paper); }
+.btn:disabled { opacity: .45; cursor: not-allowed; }
+.qz-note { margin: 0; font-size: 14px; color: var(--muted); }
+.qz-top { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.okc { color: var(--ok); font-weight: 600; } .noc { color: var(--bad-fg); font-weight: 600; }
+.streak { color: var(--y); font-weight: 600; }
+.qz-meter { margin: 10px 0 16px; }
+.qz-meter i { background: var(--accent); }
+.qz-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+.tag, .badge { font-family: var(--font-mono); font-size: 12px; border-radius: 6px; padding: 2px 8px; }
+.tag { background: var(--accent-soft); color: var(--accent); }
+.badge.sim { background: var(--warn-bg); color: var(--warn-fg); }
+.badge.retry { background: var(--bad-bg); color: var(--bad-fg); }
+.qz-q { font-family: var(--font-display); font-size: 21px; line-height: 1.35; margin: 0 0 16px; text-wrap: balance; outline: none; }
+.opts { display: grid; gap: 10px; }
+.opt { display: grid; grid-template-columns: 30px minmax(0, 1fr); gap: 10px; align-items: start; width: 100%; text-align: left; font: 400 16px/1.45 var(--font-body); color: var(--ink); background: var(--bg); border: 1.5px solid var(--line); border-radius: 10px; padding: 12px 14px; cursor: pointer; transition: border-color .15s; }
+.opt:hover:not(:disabled) { border-color: var(--accent); }
+.opt .k { font-family: var(--font-mono); font-weight: 600; font-size: 13px; text-align: center; border: 1px solid var(--line); border-radius: 6px; padding: 1px 0; background: var(--paper); }
+.opt:disabled { cursor: default; }
+.opt.correct { background: var(--ok-bg); border-color: var(--ok); }
+.opt.correct .k { background: var(--ok); color: var(--paper); border-color: var(--ok); }
+.opt.wrong { background: var(--bad-bg); border-color: var(--bad-fg); }
+.opt.wrong .k { background: var(--bad-fg); color: var(--paper); border-color: var(--bad-fg); }
+.opt.dim { opacity: .55; }
+.fb { margin-top: 16px; border-radius: 10px; padding: 14px 16px; display: grid; gap: 8px; }
+.fb p { margin: 0; }
+.fb.ok { background: var(--ok-bg); }
+.fb.no { background: var(--bad-bg); }
+.fb-h { font-family: var(--font-display); font-weight: 700; font-size: 18px; }
+.fb.ok .fb-h { color: var(--ok); } .fb.no .fb-h { color: var(--bad-fg); }
+.fb-next { font-size: 14px; font-weight: 600; }
+.fb a { color: var(--accent); }
+.fb .btn { justify-self: start; margin-top: 4px; }
+.qz-foot { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-top: 16px; font-size: 13px; color: var(--muted); }
+.linkbtn { background: none; border: 0; padding: 0; font: 500 13px var(--font-body); color: var(--muted); text-decoration: underline; cursor: pointer; }
+.end-score { font-family: var(--font-display); font-weight: 700; font-size: 52px; line-height: 1; margin: 0; font-variant-numeric: tabular-nums; }
+.end-msg { margin: 6px 0 18px; color: var(--muted); }
+.end-list { list-style: none; padding: 0; margin: 10px 0 18px; display: grid; gap: 8px; }
+.end-list li { background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px; font-size: 14px; }
+.end-list li b { display: block; color: var(--ok); font-weight: 600; margin-top: 2px; }
+.ms { display: grid; gap: 10px; }
+.ms-row { display: grid; grid-template-columns: minmax(0, 190px) minmax(0, 1fr) 110px; gap: 12px; align-items: center; font-size: 14px; }
+.ms-row a { color: var(--ink); text-decoration: none; font-weight: 500; }
+.ms-row a:hover { color: var(--accent); }
+.ms-bar { height: 8px; background: var(--line); border-radius: 99px; overflow: hidden; }
+.ms-bar i { display: block; height: 100%; border-radius: 99px; }
+.ms-val { font-family: var(--font-mono); font-size: 12px; color: var(--muted); text-align: right; font-variant-numeric: tabular-nums; }
+.ms-foot { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-top: 14px; font-size: 13px; color: var(--muted); }
+@media (max-width: 560px) { .ms-row { grid-template-columns: minmax(0, 1fr) 90px; } .ms-bar { grid-column: 1 / -1; grid-row: 2; } .quiz { padding: 16px; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .meter i, .opt { transition: none; } }
 
 [hidden]{display:none!important}
 body{margin:0}
@@ -187,7 +250,7 @@ img{max-width:100%}
 <header class="hero wrap">
   <div class="eyebrow">Customer Success Representative · San Rafael, Alajuela</div>
   <h1>Pacific Barcode Interview Prep</h1>
-  <p class="lede">A complete study guide for a STAR behavioral interview. Every sample answer is built from your real experience at Western Union and Sykes. Replace each <span class="fill">[X]</span> with your own details, practice out loud, and mark questions as practiced.</p>
+  <p class="lede">A complete study guide for a STAR behavioral interview. Every sample answer is built from your real experience at Western Union and Sykes. Practice out loud and mark each question as practiced.</p>
   <div class="facts" aria-label="Role facts">
     <span>Label manufacturer since 2002</span>
     <span>Southern California + Costa Rica</span>
@@ -195,14 +258,15 @@ img{max-width:100%}
     <span>₡700k–750k + quarterly bonus</span>
     <span>English required</span>
   </div>
+  <a class="cta" href="#quiz">Start the practice quiz</a>
   <div class="barcode" id="barcode" aria-hidden="true"></div>
 </header>
 
 <nav class="bar" aria-label="Sections">
   <div class="wrap">
+    <a href="#quiz" class="navq">Quiz</a>
     <a href="#plan">Study plan</a>
     <a href="#star">STAR</a>
-    <a href="#fix">Fix first</a>
     <a href="#company">Company</a>
     <a href="#fit">Role fit</a>
     <a href="#stories">Story bank</a>
@@ -223,12 +287,20 @@ img{max-width:100%}
 
 <main class="wrap">
 
+<section id="quiz">
+  <h2><span class="sn">QUIZ</span>Practice quiz</h2>
+  <p class="sub"><span id="qz-total"></span> multiple-choice questions on STAR, customer situations, orders, the label industry and interview English. Miss one and you get a similar question right away, and the one you missed comes back later, so you keep practicing the topic until it sticks.</p>
+  <div class="quiz" id="quiz-app"></div>
+  <h3 class="h">Your mastery by topic</h3>
+  <div class="panel" id="quiz-mastery"></div>
+</section>
+
 <section id="plan">
   <h2><span class="sn">00</span>How to use this guide</h2>
   <p class="sub">Study in this order. Three focused sessions are enough if you practice out loud.</p>
   <ol class="timeline">
-    <li><span class="when">Session 1</span><span>Read sections 01–05. Fix your CV. Fill every <span class="fill">[X]</span> in the Story bank with real details and numbers.</span></li>
-    <li><span class="when">Session 2</span><span>Read every answer in 06–07 once. Then turn on <strong>Practice mode</strong>, answer each question out loud, and only then reveal the sample. Time yourself: under 2 minutes.</span></li>
+    <li><span class="when">Session 1</span><span>Read sections 01–04: STAR, the company, the role fit map and the story bank. Remember the real details of each story.</span></li>
+    <li><span class="when">Session 2</span><span>Read every answer in 05–06 once. Then turn on <strong>Practice mode</strong>, answer each question out loud, and only then reveal the sample. Time yourself: under 2 minutes.</span></li>
     <li><span class="when">Session 3</span><span>Practice the situational and other questions, learn the vocabulary, and pick 3 questions to ask them. Do a full mock with a friend or record yourself on video.</span></li>
     <li><span class="when">Night before</span><span>Only review: your pitch (Q1), the four key stories, and the Interview day section. Sleep well.</span></li>
   </ol>
@@ -262,20 +334,8 @@ img{max-width:100%}
   </div>
 </section>
 
-<section id="fix">
-  <h2><span class="sn">02</span>Fix before the interview</h2>
-  <div class="alert">
-    <ol>
-      <li><strong>Your CV summary says you want a career in "HR Benefits Operations".</strong> The interviewer will notice. Make a version for this job that highlights customer service, request and order management, cross-team coordination and Excel. Prepare Q5.</li>
-      <li><strong>Portuguese level</strong> says "professional" in the summary and "basic professional" in Languages. Use the same level in both places.</li>
-      <li><strong>Your gaps:</strong> label or manufacturing industry, quoting and sales, QuickBooks, Smartsheet. Use the bridge formula: <em>"I haven't used X yet, but I've done Y, which is similar, and I learn new systems fast. For example…"</em></li>
-      <li><strong>Confidentiality:</strong> your AML work involves sensitive cases. In your stories, describe the process and the result, never names, amounts or details of investigations.</li>
-    </ol>
-  </div>
-</section>
-
 <section id="company">
-  <h2><span class="sn">03</span>What to know about Pacific Barcode</h2>
+  <h2><span class="sn">02</span>What to know about Pacific Barcode</h2>
   <p class="sub">Everything here comes from the job posting and their LinkedIn page. Visit pacificbarcode.com before the interview to add 2–3 product names.</p>
   <div class="panel">
     <ul>
@@ -291,7 +351,7 @@ img{max-width:100%}
 </section>
 
 <section id="fit">
-  <h2><span class="sn">04</span>Role fit map</h2>
+  <h2><span class="sn">03</span>Role fit map</h2>
   <p class="sub">Each responsibility in the posting, the evidence from your CV, and the question where you'll prove it. If you can explain this table, you can answer almost anything.</p>
   <div class="tbl">
     <table>
@@ -302,25 +362,25 @@ img{max-width:100%}
 </section>
 
 <section id="stories">
-  <h2><span class="sn">05</span>Your story bank</h2>
+  <h2><span class="sn">04</span>Your story bank</h2>
   <p class="sub">Eight core stories. Write them down with real details before practicing. One good story can answer three or four different questions.</p>
   <div class="stories" id="g-stories"></div>
 </section>
 
 <section id="opening">
-  <h2><span class="sn">06</span>Opening questions</h2>
+  <h2><span class="sn">05</span>Opening questions</h2>
   <p class="sub">These come first and set the first impression. Practice them until they sound natural, not memorized.</p>
   <div class="group" id="g-opening"></div>
 </section>
 
 <section id="behavioral">
-  <h2><span class="sn">07</span>STAR behavioral questions</h2>
+  <h2><span class="sn">06</span>STAR behavioral questions</h2>
   <p class="sub">The core of the interview, organized by the skills in the job posting. Each card shows what the interviewer is really evaluating. Turn on Practice mode to hide answers and test yourself.</p>
   <div id="g-behavioral"></div>
 </section>
 
 <section id="situational">
-  <h2><span class="sn">08</span>Situational questions</h2>
+  <h2><span class="sn">07</span>Situational questions</h2>
   <p class="sub">"What would you do if…?" These test judgment, not past experience. Use this structure: <strong>1) understand the facts, 2) coordinate internally, 3) communicate options to the customer, 4) confirm in writing, 5) document.</strong></p>
   <div class="tbl">
     <table>
@@ -331,19 +391,19 @@ img{max-width:100%}
 </section>
 
 <section id="other">
-  <h2><span class="sn">09</span>Other common questions</h2>
+  <h2><span class="sn">08</span>Other common questions</h2>
   <p class="sub">Not STAR, but they come up in almost every interview. Short, confident answers.</p>
   <div class="group" id="g-other"></div>
 </section>
 
 <section id="vocab">
-  <h2><span class="sn">10</span>Label industry vocabulary</h2>
+  <h2><span class="sn">09</span>Label industry vocabulary</h2>
   <p class="sub">You don't need to be an expert, but using these terms naturally shows you did your homework. Each one includes a sentence you could use.</p>
   <dl class="vocab" id="g-vocab"></dl>
 </section>
 
 <section id="phrases">
-  <h2><span class="sn">11</span>Useful English phrases</h2>
+  <h2><span class="sn">10</span>Useful English phrases</h2>
   <p class="sub">For when you need time, didn't understand, or want to sound structured.</p>
   <div class="panel phrases">
     <div><h4>To buy time</h4><ul>
@@ -365,7 +425,7 @@ img{max-width:100%}
     </ul></div>
     <div><h4>When you lack experience</h4><ul>
       <li>"I haven't done that exactly, but the closest experience I have is…"</li>
-      <li>"I haven't used that tool yet, but I learned [system] in [X weeks]."</li>
+      <li>"I haven't used that tool yet, but I learn new systems quickly."</li>
     </ul></div>
     <div><h4>To check your answer landed</h4><ul>
       <li>"Does that answer your question, or would you like more detail?"</li>
@@ -374,7 +434,7 @@ img{max-width:100%}
 </section>
 
 <section id="ask">
-  <h2><span class="sn">12</span>Questions to ask them</h2>
+  <h2><span class="sn">11</span>Questions to ask them</h2>
   <p class="sub">Always ask two or three. Never say "No, I don't have questions". Pick the ones that weren't answered during the interview.</p>
   <ol class="asks">
     <li>"What does a typical day look like in this role, and how many accounts would I manage?"<span>Shows you're picturing yourself in the job.</span></li>
@@ -389,13 +449,13 @@ img{max-width:100%}
 </section>
 
 <section id="close">
-  <h2><span class="sn">13</span>Your closing statement</h2>
+  <h2><span class="sn">12</span>Your closing statement</h2>
   <p class="sub">When they ask "Is there anything else you'd like to add?", don't say no. Use 30 seconds to summarize why you fit.</p>
   <p class="quote">"Thank you for your time. I'm very interested in this role. I've spent more than 12 years being the point of contact for customers, managing requests from start to finish, coordinating with other teams and making sure every detail is correct. I'm excited about learning the label industry and helping your customers and your revenue grow. I'd love to be part of the team."</p>
 </section>
 
 <section id="day">
-  <h2><span class="sn">14</span>Interview day</h2>
+  <h2><span class="sn">13</span>Interview day</h2>
   <ol class="timeline">
     <li><span class="when">Day before</span><span>Review Q1, the four key stories and your questions. Prepare your clothes (business casual), a printed CV, a notebook and a pen.</span></li>
     <li><span class="when">If on video</span><span>Test camera, microphone and internet. Quiet room, neutral background, light in front of you. Look at the camera when you speak.</span></li>
@@ -407,7 +467,7 @@ img{max-width:100%}
 </section>
 
 <section id="thanks">
-  <h2><span class="sn">15</span>Thank-you email</h2>
+  <h2><span class="sn">14</span>Thank-you email</h2>
   <p class="sub">Send it within 24 hours. Replace the parts in brackets.</p>
   <pre class="email" id="email">Subject: Thank you – Customer Success Representative interview
 
@@ -426,7 +486,7 @@ Tomás Sandi
 </section>
 
 <section id="checklist">
-  <h2><span class="sn">16</span>Preparation checklist</h2>
+  <h2><span class="sn">15</span>Preparation checklist</h2>
   <p class="progress" id="progress"></p>
   <div class="meter"><i id="meter"></i></div>
   <ul class="final" id="g-final"></ul>
@@ -467,9 +527,9 @@ const stories = [
   { t: "The error you caught", w: "WU · FIU maker-checker", d: "A discrepancy in a peer's case that you found, verified and returned for correction.", u: "Attention to detail · Quality · Integrity" },
   { t: "The heavy day", w: "WU · FIU", d: "A day with a full caseload plus urgent escalations, and how you prioritized and met SLA.", u: "Multiple priorities · Pressure · Organization" },
   { t: "The stuck request", w: "WU · Reinstatement", d: "A request that depended on another department, and how you kept it moving.", u: "Cross-team work · Follow-up · Ownership" },
-  { t: "The Excel improvement", w: "WU · any role", d: "A tracker or report you built that saved time or reduced errors. Fill in: [what you built] and [time saved].", u: "Process improvement · Excel · Initiative" },
+  { t: "The Excel improvement", w: "WU · any role", d: "A tracker or report you built in Excel that saved time and reduced errors.", u: "Process improvement · Excel · Initiative" },
   { t: "The fast learner", w: "WU · move to FIU", d: "Learning new systems and regulations when you changed teams.", u: "New systems · Adaptability · Feedback" },
-  { t: "The AT&T recommendation", w: "Sykes · AT&T", d: "A call where you noticed what the customer really needed and suggested the right solution. Fill in: [real example].", u: "Sales · Needs analysis · Going above and beyond" }
+  { t: "The AT&T recommendation", w: "Sykes · AT&T", d: "A call where you noticed what the customer really needed and suggested the right solution.", u: "Sales · Needs analysis · Going above and beyond" }
 ];
 
 const opening = [
@@ -481,7 +541,7 @@ const opening = [
     quote: "Three reasons. First, your 'customers first' culture matches how I've always worked. Second, this role isn't only service. It includes quoting, orders, coordinating with production and growing accounts, so I'd own the whole customer experience, which is the next step I want in my career. Third, I like that you're a mid-sized company with operations in California and Costa Rica, where I can have a direct impact and grow with the team.",
     avoid: "Talking only about salary, location or 'I need a change'." },
   { n: 3, q: "What do you know about our company?", why: "<b>They evaluate:</b> preparation. Two or three specific facts are enough.",
-    quote: "You've been in business since 2002 as a label manufacturer, with operations in Southern California and here in Costa Rica. You provide complete color labeling systems, not only the labels but also setup, training and support, so customers can move from pre-printed labels to printing their own color labels on demand, which is faster, more flexible and helps with compliance. I also noticed your values: customers first, investing in your people, and excellence in every job. [Add 1–2 products from the website.]" },
+    quote: "You've been in business since 2002 as a label manufacturer, with operations in Southern California and here in Costa Rica. You provide complete color labeling systems, not only the labels but also setup, training and support, so customers can move from pre-printed labels to printing their own color labels on demand, which is faster, more flexible and helps with compliance. I also noticed your values: customers first, investing in your people, and excellence in every job." },
   { n: 4, q: "Why are you leaving Western Union after 10 years?", why: "<b>They evaluate:</b> that you're moving toward something positive, not running from a problem.",
     quote: "I've learned a lot at Western Union and I'm grateful for it. But my work has become very focused on compliance investigations, and what I enjoy most is working directly with customers: solving their problems, keeping them informed and building relationships. I want a role where my work connects directly to customer satisfaction and to the growth of the business.",
     avoid: "Anything negative about your manager, the company or your salary." },
@@ -496,33 +556,33 @@ const opening = [
 const behavioral = [
   { title: "A · Customer communication and relationships", gw: "The posting says: primary contact, proactive updates, clear expectations, nurture relationships.", items: [
     { n: 8, q: "Tell me about a time you dealt with a difficult or upset customer.", why: "<b>They evaluate:</b> calm under pressure, empathy, ownership and follow-through.",
-      S: "At Western Union, on the Global Consumer Reinstatement team, a customer from [country] wrote to us very upset because their account was blocked and they urgently needed to send money to their family.",
+      S: "At Western Union, on the Global Consumer Reinstatement team, a customer from Latin America wrote to us very upset because their account was blocked and they urgently needed to send money to their family.",
       T: "My responsibility was to manage the request, get a decision, and communicate it professionally, even if the answer wasn't what they wanted.",
-      A: "First, I acknowledged their frustration and explained exactly what information I needed from them. Second, I prioritized the case and contacted the internal department directly instead of letting it wait in the queue. Third, I sent the customer a status update every [24/48] hours so they never felt ignored.",
-      R: "The case was resolved in [X days], faster than our standard [Y days], and the customer thanked me for keeping them informed. I learned that customers handle a delay much better than silence.",
+      A: "First, I acknowledged their frustration and explained exactly what information I needed from them. Second, I prioritized the case and contacted the internal department directly instead of letting it wait in the queue. Third, I sent the customer a status update every day so they never felt ignored.",
+      R: "The case was resolved faster than our standard timeframe, and the customer thanked me for keeping them informed. I learned that customers handle a delay much better than silence.",
       link: "With a label customer worried about a shipment, I'd do the same: acknowledge, act fast internally, and update them before they ask." },
     { n: 9, q: "Tell me about a time you had to deliver bad news to a customer.", why: "<b>They evaluate:</b> honesty and how you protect the relationship. Very relevant: orders get delayed in manufacturing.",
       S: "We had to deny a reinstatement request for a customer who had been waiting for a decision.",
       T: "I had to communicate the decision clearly without damaging the relationship.",
       A: "I wrote a clear and courteous message. I explained the decision in simple terms without internal jargon, and I told them what options they had next, so they had a path forward and not only a 'no'.",
-      R: "The customer accepted the decision without escalating, and my written responses were [recognized in quality reviews / never escalated].",
+      R: "The customer accepted the decision without escalating, and the relationship stayed respectful.",
       link: "For a delayed order: tell the customer early, explain the impact, and offer options such as a partial shipment or an expedite." },
     { n: 10, q: "Give an example of when you communicated proactively, before the customer asked.", why: "<b>They evaluate:</b> the key behavior of the role, 'proactive status updates'.",
       S: "I was managing a high volume of requests, and some depended on other departments and could take longer than expected.",
       T: "Keep every customer informed without waiting for them to chase me.",
       A: "I built a simple Excel tracker with each request, its status and the date of my last contact with the customer. When a case was going to pass the expected date, I emailed the customer before the deadline with an update and a new estimate.",
-      R: "Follow-up emails asking 'what's the status?' dropped by about [X%], which freed up time for me and my team.",
+      R: "Follow-up emails asking 'what's the status?' dropped noticeably, which freed up time for me and my team.",
       link: "I'd use the same habit for orders: an update at order entry, at production, and at shipment with tracking." },
     { n: 11, q: "Tell me about a time you built a strong relationship with a customer or stakeholder.", why: "<b>They evaluate:</b> the 'nurture relationships' part of the role.",
-      S: "In Reinstatement, I regularly worked with [a specific internal team / a recurring type of customer].",
+      S: "In Reinstatement, I regularly worked with the same internal teams to resolve customer requests.",
       T: "I needed their trust and quick cooperation to resolve requests on time.",
       A: "I was consistent: I always sent complete information, kept my promises on dates, and thanked them when they helped. I also learned what they needed from me so I could prepare it in advance.",
-      R: "They started prioritizing my requests, and our average resolution time improved to [X]. Trust is built with small promises kept." },
+      R: "They started prioritizing my requests, and our resolution times improved. Trust is built with small promises kept." },
     { n: 12, q: "Tell me about a time you went above and beyond for a customer.", why: "<b>They evaluate:</b> ownership and the 'customers first' value.",
-      S: "[Example: a customer who only spoke Portuguese and had a complex case.]",
+      S: "A customer who only spoke Portuguese had a complex case and was confused about the process.",
       T: "Resolve it even though it went beyond my normal process.",
       A: "I communicated with them in Portuguese, explained each step patiently, and personally followed up with the internal team until the case was closed.",
-      R: "The case was resolved in [X], and the customer [sent a thank-you / gave positive feedback]." },
+      R: "The case was resolved, and the customer thanked me for helping them in their own language." },
     { n: 13, q: "Tell me about a time you had to say no to a customer.", why: "<b>They evaluate:</b> setting clear expectations and protecting the company while keeping the customer.",
       S: "A customer asked for an exception that our policy didn't allow.",
       T: "Say no without losing the customer's trust.",
@@ -532,16 +592,16 @@ const behavioral = [
   ]},
   { title: "B · Multiple priorities and pressure", gw: "The posting says: fast responses, timely fulfillment, on-time deliveries.", items: [
     { n: 14, q: "Tell me about a time you had to handle multiple urgent priorities at once.", why: "<b>They evaluate:</b> organization and how you decide what goes first.",
-      S: "In the FIU I manage a daily caseload of [X] cases, each with a deadline, and some days urgent escalations arrive on top of the normal work.",
+      S: "In the FIU I manage a large daily caseload, each with a deadline, and some days urgent escalations arrive on top of the normal work.",
       T: "Close every case on time without losing quality.",
       A: "I prioritize by deadline and risk. I handle the most time-sensitive cases first, block time on my calendar for detailed review, and track everything in my list. If I see a deadline at risk, I tell my supervisor early instead of at the last minute.",
-      R: "I consistently close [X%] of my cases within SLA.",
+      R: "I consistently close my cases within SLA.",
       link: "The same approach works for orders with different ship dates and customers asking for updates at the same time." },
     { n: 15, q: "Tell me about a time you worked under a very tight deadline.", why: "<b>They evaluate:</b> calm, focus, and communication when time is short.",
-      S: "[Example: an urgent case or report that had to be finished by end of day.]",
+      S: "An urgent case had to be completed and documented by the end of the day.",
       T: "Deliver it on time and correctly.",
       A: "I broke the work into steps, focused on the critical parts first, removed distractions, and kept my supervisor informed of progress.",
-      R: "I delivered it [on time / X hours early] with no errors. Breaking the work down keeps pressure under control." },
+      R: "I delivered it on time with no errors. Breaking the work down keeps pressure under control." },
     { n: 16, q: "How do you organize your day when you have many accounts or requests?", why: "<b>They evaluate:</b> a real system. Short answer, not STAR.",
       quote: "I start the day by reviewing open items and deadlines. Urgent things first, then customer updates, then follow-ups like open quotes. I keep everything in a tracker so nothing gets lost, I block time for detailed work like order entry, and I end the day by checking that every customer who needed an update got one." }
   ]},
@@ -549,14 +609,14 @@ const behavioral = [
     { n: 17, q: "Tell me about a time you caught an error before it became a problem.", why: "<b>They evaluate:</b> the most important skill for order entry. One error can mean wrong labels printed.",
       S: "In our maker-checker process at Western Union, I was reviewing a colleague's case before closure.",
       T: "Verify that it was accurate, complete and compliant.",
-      A: "I noticed that [a data point / a supporting document] didn't match the information in the system. I checked the source, confirmed the discrepancy, and returned it to my colleague with a clear explanation so they could correct it.",
-      R: "The case closed correctly and we avoided [a compliance issue / rework / a wrong decision].",
+      A: "I noticed that a data point in the supporting documents didn't match the information in the system. I checked the source, confirmed the discrepancy, and returned it to my colleague with a clear explanation so they could correct it.",
+      R: "The case closed correctly and we avoided rework and a possible wrong decision.",
       link: "Checking a customer PO against the quote is the same skill: compare two documents and catch differences before the order goes into production." },
     { n: 18, q: "How do you make sure your data entry is accurate?", why: "<b>They evaluate:</b> your method for avoiding errors.",
       S: "In my KYC role I entered and validated customer profiles and documents every day.",
       T: "Keep records accurate and compliant.",
       A: "I always compared data against the source documents, double-checked critical fields such as names, ID numbers and dates, and escalated any discrepancy according to procedure instead of assuming.",
-      R: "I kept a quality score of [X%] and built a strong foundation in data integrity.",
+      R: "I kept high quality scores and built a strong foundation in data integrity.",
       link: "For orders I'd double-check SKU, quantity, material, size, price, ship date and proof status before submitting." },
     { n: 19, q: "Tell me about a time you received a request with incomplete or unclear information.", why: "<b>They evaluate:</b> 'qualify requests and gather specs'. Do you ask the right questions or guess?",
       S: "In Reinstatement, many requests arrived without the documents or details we needed.",
@@ -567,10 +627,10 @@ const behavioral = [
   ]},
   { title: "D · Working with Production, Purchasing and Shipping", gw: "The posting says: coordinate internally, validate dates and capacity, confirm material availability.", items: [
     { n: 20, q: "Tell me about a time you worked with another department to solve a customer's problem.", why: "<b>They evaluate:</b> whether you can get other teams to act without being their boss.",
-      S: "In Reinstatement, many decisions depended on other internal teams such as [compliance / fraud / operations].",
+      S: "In Reinstatement, many decisions depended on other internal teams such as compliance and operations.",
       T: "I was the link between the customer and those teams, and I had to keep the request from getting stuck.",
       A: "I sent the other team a clear, complete request with everything they needed, so there was no back-and-forth. I agreed on a date with them, followed up politely when I didn't hear back, and updated the customer at each step.",
-      R: "The request was resolved [on time / in X days].",
+      R: "The request was resolved on time.",
       link: "I'd work the same way with Production to confirm dates, with Purchasing for materials, and with Shipping for carriers." },
     { n: 21, q: "Tell me about a time you disagreed with a coworker or another team.", why: "<b>They evaluate:</b> professionalism and conflict handling.",
       S: "During a maker-checker review, I didn't agree with a colleague's recommendation on a case.",
@@ -581,7 +641,7 @@ const behavioral = [
       S: "An internal team didn't respond on time to a request a customer was waiting for.",
       T: "Protect the customer experience and get the request moving again.",
       A: "I contacted the team directly to understand the delay, escalated to my supervisor following the process, and informed the customer of the new estimate without blaming anyone.",
-      R: "The request was completed in [X], and the customer appreciated the honesty.",
+      R: "The request was completed, and the customer appreciated the honesty.",
       link: "If Production is late, the customer hears 'we' from me, never 'they'." }
   ]},
   { title: "E · Follow-up, sales and growth", gw: "The posting says: follow up on open quotes, identify reorders, cross-sell, revenue growth.", items: [
@@ -589,34 +649,34 @@ const behavioral = [
       S: "I had several cases waiting on information from customers or internal teams.",
       T: "Get them unblocked and closed.",
       A: "I set reminders in Outlook, followed up on a fixed schedule, and changed the channel or the wording when I didn't get an answer. I always made the next step easy for the other person.",
-      R: "I reduced my aged pending cases from [X] to [Y].",
+      R: "I significantly reduced my aged pending cases.",
       link: "I'd do the same with open quotes. A quote without follow-up is a lost sale." },
     { n: 24, q: "Do you have sales experience? Tell me about a time you identified an opportunity for a customer.", why: "<b>They evaluate:</b> commercial mindset. This is a gap, so be honest, then connect.",
-      quote: "I haven't had a formal sales role, but at Sykes with AT&T, part of solving customer issues was identifying what they really needed and recommending the right service. [Real example: a customer called with a technical problem, I noticed their plan didn't fit their usage, and I recommended a better option.] I believe good service is the best sales tool. If you understand the customer's volumes, reorder cycle and applications, you can anticipate what they need. For example, I'd track when each customer usually reorders and contact them before they run out of labels.",
+      quote: "I haven't had a formal sales role, but at Sykes with AT&T, part of solving customer issues was identifying what they really needed and recommending the right service. For example, when customers called with a technical problem, I sometimes noticed their plan didn't fit their usage and recommended a better option. I believe good service is the best sales tool. If you understand the customer's volumes, reorder cycle and applications, you can anticipate what they need. For example, I'd track when each customer usually reorders and contact them before they run out of labels.",
       avoid: "Saying 'I'm not a salesperson' or 'I don't like selling'." },
     { n: 25, q: "Tell me about a time you persuaded someone to accept your idea.", why: "<b>They evaluate:</b> influence, useful when recommending products or convincing internal teams.",
-      S: "[Example: proposing a new tracker or a change in how the team handled a type of request.]",
+      S: "I wanted to propose a new tracker to follow up on pending requests.",
       T: "Get my supervisor or team to agree.",
       A: "I prepared data showing the problem and the benefit, presented a simple proposal, and offered to test it first myself.",
-      R: "It was [adopted / tested], and it [saved X / reduced errors by X]." }
+      R: "My supervisor approved a test, and it helped the team follow up on time." }
   ]},
   { title: "F · Problem solving and mistakes", gw: "The posting says: resolve issues, own first response, expect excellence.", items: [
     { n: 26, q: "Tell me about a mistake you made and how you handled it.", why: "<b>They evaluate:</b> honesty and learning. Choose a real, small mistake that was fixed.",
-      S: "Early in my KYC role, I [describe a real small mistake: missed a detail in a document, entered something incorrectly].",
+      S: "Early in my KYC role, I missed a detail in a customer document during my review.",
       T: "Fix it and make sure it didn't happen again.",
       A: "As soon as I noticed, I reported it to my supervisor, corrected it, and checked whether other cases were affected. Then I created a personal checklist for that type of review.",
       R: "There was no impact on the customer and I never repeated that error. Being transparent quickly is always better.",
       avoid: "Saying 'I don't make mistakes' or choosing a serious compliance failure." },
     { n: 27, q: "Tell me about a time you improved a process.", why: "<b>They evaluate:</b> initiative and Excel skills.",
-      S: "[Example: tracking requests or reporting metrics took a lot of manual time.]",
+      S: "Tracking requests and reporting metrics took a lot of manual time.",
       T: "Make it faster and more reliable.",
-      A: "I built an Excel file with [formulas / pivot tables / conditional formatting] to [track status / calculate metrics / flag cases near their deadline].",
-      R: "It saved [X hours per week], and my supervisor [used it / shared it with the team]." },
+      A: "I built an Excel file with formulas, pivot tables and conditional formatting to track status, calculate metrics and flag cases near their deadline.",
+      R: "It saved time every week and made reporting more reliable." },
     { n: 28, q: "Tell me about a complex problem you solved by analyzing information.", why: "<b>They evaluate:</b> analytical thinking. Your FIU work and Data Science studies help here.",
       S: "In the FIU, I received a case with a large amount of transaction data that didn't make sense at first.",
       T: "Understand what was happening and make a correct recommendation.",
       A: "I organized the data in Excel, looked for patterns, compared it with the supporting information and the policy, and documented my reasoning step by step.",
-      R: "I made a clear, well-supported recommendation that [was approved in the checker review]. Breaking a big problem into data makes it manageable.",
+      R: "I made a clear, well-supported recommendation that was approved in the checker review. Breaking a big problem into data makes it manageable.",
       avoid: "Sharing any confidential detail of the investigation." }
   ]},
   { title: "G · Learning, feedback and documentation", gw: "The posting says: invest in people to grow, complete documentation, QuickBooks and Smartsheet are a plus.", items: [
@@ -624,27 +684,27 @@ const behavioral = [
       S: "When I moved from Reinstatement to the FIU, I had to learn new case-management and transaction-monitoring systems and new regulations.",
       T: "Become productive on my own as fast as possible.",
       A: "I took notes, practiced with real cases under supervision, asked experienced colleagues, and studied on my own after hours.",
-      R: "I was working fully on my own in [X weeks].",
+      R: "I was working fully on my own in a few weeks.",
       link: "For QuickBooks and Smartsheet I'd do the same. I'm also studying a Master's in Data Science, so learning new tools is part of my routine." },
     { n: 30, q: "How do you make sure your documentation is complete?", why: "<b>They evaluate:</b> 'every order has complete documentation'.",
       quote: "At Western Union every case has to be audit-ready, so I document every decision, every communication and every supporting document. Here I'd treat every order the same way: the quote, the PO, the signed proof, any change confirmed in writing, and the shipping documents. If someone opens the order six months later, they should understand everything without asking me." },
     { n: 31, q: "Tell me about a time you received critical feedback.", why: "<b>They evaluate:</b> openness to coaching.",
-      S: "[Example: a quality review or supervisor comment about your case write-ups being too long or missing a detail.]",
+      S: "In a quality review, my supervisor told me some of my case write-ups were longer than necessary.",
       T: "Improve that area.",
-      A: "I thanked them, asked for a specific example, and changed my approach, for example [using a template / adding a final check].",
-      R: "My next reviews improved to [X], and I still use that habit." },
+      A: "I thanked them, asked for a specific example, and changed my approach, using a clear template for every write-up.",
+      R: "My next reviews improved, and I still use that habit." },
     { n: 32, q: "Tell me about a time you had to use good judgment with confidential information or a policy.", why: "<b>They evaluate:</b> integrity. Your compliance background is a strength here.",
       S: "In compliance work I constantly handle sensitive customer information.",
       T: "Protect it and follow policy even under pressure.",
-      A: "When [someone asked for information they weren't authorized to receive / a situation didn't fit the procedure], I didn't improvise. I followed the protocol and escalated to the right person.",
+      A: "When a situation didn't fit the standard procedure, I didn't improvise. I followed the protocol and escalated to the right person.",
       R: "The situation was handled correctly and transparently. Sound judgment protects both the customer and the company." }
   ]},
   { title: "H · Teamwork", gw: "Small company, so everyone helps each other.", items: [
     { n: 33, q: "Tell me about a time you helped a teammate or shared knowledge.", why: "<b>They evaluate:</b> team player attitude.",
-      S: "A new colleague joined the FIU and was struggling with [the case process / the systems].",
+      S: "A new colleague joined the FIU and was struggling with the case process and the systems.",
       T: "Help them get up to speed without affecting my own caseload.",
       A: "I shared my notes and checklists, walked them through a few cases, and was available for questions.",
-      R: "They became independent faster, and the team's productivity [improved / stayed on target]." }
+      R: "They became independent faster, and the team's productivity stayed on target." }
   ]}
 ];
 
@@ -690,7 +750,7 @@ const other = [
   { n: 34, q: "What are your strengths?", why: "<b>Tip:</b> choose three that match the posting and give a quick proof for each.",
     quote: "First, attention to detail: I've worked for years in a maker-checker process. Second, organization: I manage a daily caseload with deadlines and meet SLA consistently. Third, communication: I've been the point of contact for customers in English, Spanish and Portuguese for more than ten years." },
   { n: 35, q: "What is your biggest weakness?", why: "<b>Tip:</b> a real weakness plus what you're doing about it.",
-    quote: "I haven't used QuickBooks or Smartsheet yet, and I've already started learning them with [a tutorial or course you actually took]. Also, I used to take too much on myself instead of asking for help. I've learned to raise my hand early when a deadline is at risk, and it has made me more reliable." },
+    quote: "I haven't used QuickBooks or Smartsheet yet, and I've already started learning them with online tutorials. Also, I used to take too much on myself instead of asking for help. I've learned to raise my hand early when a deadline is at risk, and it has made me more reliable." },
   { n: 36, q: "Where do you see yourself in 5 years?", why: "<b>Tip:</b> show you want to grow here, not leave.",
     quote: "I see myself as an expert in your products and customers, managing key accounts and contributing to revenue growth. If the company grows, I'd like to take on more responsibility, for example training new team members or leading a group of accounts." },
   { n: 37, q: "How do you handle stress?", quote: "I stay organized. When there's a lot of pressure, I write down everything pending, prioritize by deadline and impact, and communicate early if something is at risk. Having a plan keeps me calm, and I'm used to high-volume environments from Sykes and Western Union." },
@@ -699,13 +759,12 @@ const other = [
   { n: 39, q: "What are your salary expectations?", why: "<b>Posted range:</b> ₡700,000–750,000 per month plus quarterly bonus.",
     quote: "Based on the range in the posting and my experience, I'm comfortable with the upper end, around 750,000 colones plus the quarterly bonus. I'm also open to discussing the full package." },
   { n: 40, q: "Are you comfortable working U.S. hours with U.S. customers?", quote: "Yes. I supported U.S. customers for AT&T for two years and I'm comfortable with that schedule." },
-  { n: 41, q: "The office is in San Rafael de Alajuela. Is that OK for you?", quote: "Yes, I've planned the commute and it works for me. [Confirm your real route and time before the interview.]" },
-  { n: 42, q: "When can you start?", quote: "I'd like to give Western Union proper notice, so I could start [X weeks] after receiving an offer." }
+  { n: 41, q: "The office is in San Rafael de Alajuela. Is that OK for you?", quote: "Yes, I've planned the commute and it works for me." },
+  { n: 42, q: "When can you start?", quote: "I'd like to give Western Union proper notice, so I could start once my notice period ends." }
 ];
 
 const finalItems = [
-  "Update the CV: remove the HR Benefits focus and fix the Portuguese level",
-  "Fill every [X] in the Story bank with real details and numbers",
+  "Remember the real details of each story in the Story bank",
   "Visit pacificbarcode.com and write down 2–3 of their products",
   "Practice Q1 (Tell me about yourself) until it takes under 2 minutes",
   "Answer every behavioral question out loud in Practice mode",
@@ -810,6 +869,282 @@ copyBtn.addEventListener("click", () => {
     navigator.clipboard.writeText(text).then(() => { copyBtn.textContent = "Copied"; setTimeout(() => copyBtn.textContent = "Copy email", 2000); }, fallback);
   } catch (e) { fallback(); }
 });
+
+/* ---------- Adaptive quiz ---------- */
+const SK = {
+  star: { n: "STAR method", h: "#star" },
+  customer: { n: "Difficult customers", h: "#behavioral" },
+  proactive: { n: "Proactive communication", h: "#behavioral" },
+  accuracy: { n: "Orders and accuracy", h: "#situational" },
+  coordination: { n: "Internal coordination", h: "#situational" },
+  sales: { n: "Follow-up and sales", h: "#behavioral" },
+  interview: { n: "Interview strategy", h: "#opening" },
+  vocab: { n: "Label vocabulary", h: "#vocab" },
+  english: { n: "Interview English", h: "#phrases" }
+};
+
+// [topic, question, best answer, [other options], explanation]
+const QB = [
+  ["star","In a STAR answer, which part should take the most time?","Action: the specific steps you took",["Situation: the background and context","Task: what your responsibility was","Result: the final outcome"],"Action is about 60% of the answer. It's where the interviewer sees your skills."],
+  ["star","'My responsibility was to get a decision and communicate it to the customer.' Which STAR part is this?","Task",["Situation","Action","Result"],"It describes what you were responsible for, so it's the Task."],
+  ["star","'As a result, the case was closed in 2 days instead of the usual 5.' Which STAR part is this?","Result",["Action","Task","Situation"],"An outcome with a number is a strong Result."],
+  ["star","'First, I prioritized the case. Then I contacted the department directly.' Which STAR part is this?","Action",["Task","Situation","Result"],"Specific steps you took are the Action."],
+  ["star","'At Western Union, on the Reinstatement team, a customer wrote to us very upset.' Which STAR part is this?","Situation",["Task","Action","Result"],"Where, when and the context make up the Situation."],
+  ["star","Which Result sentence is the strongest?","The case was resolved in 3 days instead of the usual 7, and the customer thanked me.",["It went well in the end.","We all worked really hard on it.","I think the customer was happy."],"Strong results are specific and measurable."],
+  ["star","Which Action sentence is the strongest?","I contacted the internal team directly and agreed on a deadline with them.",["We contacted the internal team and they helped.","Usually the team contacts other departments.","The process was that someone contacts the team."],"Use 'I' and a specific past action. They want to know what YOU did."],
+  ["star","What is the ideal length for a STAR answer?","About 1.5 to 2 minutes",["About 30 seconds","4 to 5 minutes","As long as it takes to tell everything"],"Long enough to show detail, short enough to keep their attention."],
+  ["star","The interviewer asks 'Tell me about a time when…'. What should you describe?","One specific real situation from your past",["What you usually do in general","What you would do in theory","A situation a coworker handled"],"Behavioral questions need one concrete past example, not general habits."],
+
+  ["customer","A customer writes to you very upset. What is the best first step?","Acknowledge their frustration and explain what you'll do next",["Explain the company policy right away","Transfer them to your supervisor","Wait until you have the full answer before replying"],"Acknowledging first calms the customer. Then give a clear next step."],
+  ["customer","What is the best way to deliver bad news to a customer?","Early, clearly, and with options or next steps",["Wait until the customer asks","Explain that another department caused it","Keep the message short and vague"],"Early, clear and with options protects the relationship."],
+  ["customer","An angry customer asks to speak to a manager. What do you do?","Listen, try to solve it, and if they still want a manager, escalate with a full summary",["Tell them managers don't take calls","Transfer them immediately with no context","Explain why they are wrong"],"Try to own it first. If you escalate, pass the full context so they don't repeat themselves."],
+  ["customer","A customer asks a technical question you can't answer. What do you say?","I'll confirm with the right person and get back to you by a specific time.",["Give your best guess so they're not waiting","Tell them to check the website","Tell them that's not your area"],"Never guess. Commit to a time and follow up."],
+  ["customer","A customer asks for an exception the policy doesn't allow. Best response?","Explain the reason simply and offer the best alternative you can",["Approve it to keep the customer happy","Just say no","Ignore the request"],"Saying no well means a reason plus an alternative."],
+  ["customer","Which part of your experience best proves 'primary point of contact for accounts'?","First point of contact for LATAM consumers in English, Spanish and Portuguese",["Workday employee self-service user","Scheduling Zoom meetings","Coursework in economics"],"Choose evidence that matches the requirement directly."],
+
+  ["proactive","Which behavior is proactive communication?","Updating the customer before the deadline when you see a delay coming",["Replying quickly when the customer asks for status","Sending an update only after shipment","Waiting for your supervisor to tell the customer"],"Proactive means before the customer has to ask."],
+  ["proactive","What is the best way to explain customer success vs. customer service?","Service solves problems when the customer calls; success makes sure they get the result before they need to call",["They are exactly the same","Success is only about sales","Service is for big customers, success for small ones"],"This shows you understand the focus of the role."],
+  ["proactive","When should you tell a customer that their order will be late?","As soon as you know",["On the original ship date","After the order arrives","Only if they ask"],"The earlier they know, the more options they have."],
+  ["proactive","Which habit best supports proactive updates?","A tracker with the status and last-contact date of each order",["Remembering everything","Waiting for customer emails","Checking orders once a week"],"A system keeps things from being forgotten."],
+  ["proactive","When should a customer get updates on an order?","At order entry, during production if anything changes, and at shipment with tracking",["Only when it ships","Only if there is a problem","Only when they call"],"Updates at key milestones keep expectations clear."],
+
+  ["accuracy","The customer's PO shows a different price than your quote. What do you do?","Contact the customer, confirm the correct price in writing, then enter the order",["Enter the price on the PO","Enter the price on the quote","Send it to production and fix it later"],"Never enter an order with a discrepancy. Confirm in writing first."],
+  ["accuracy","Before submitting an order, what should you double-check?","SKU, quantity, material, size, price, ship date and proof status",["Only the price","Only the customer name","Nothing, the system validates it"],"One wrong field can mean the wrong labels get printed."],
+  ["accuracy","The proof isn't approved yet and the ship date is close. What do you do?","Contact the customer, explain production can't start without approval, and give the new date if it comes late",["Start production anyway to save time","Wait quietly for them to approve","Cancel the order"],"No signed proof, no production. Explain the impact on the date."],
+  ["accuracy","The customer changes the quantity after the order was entered. What do you do?","Check with Production, confirm the cost and date impact in writing, and update after approval",["Change it immediately in the system","Refuse the change","Tell them to call Production"],"Every change gets its impact confirmed in writing."],
+  ["accuracy","A new customer asks for a quote but gives very few details. What do you do?","Ask about material, size, quantity, colors, timeline and application environment",["Quote a standard price","Wait until they send more information","Send the general catalog only"],"Qualifying the request means gathering specs before quoting."],
+  ["accuracy","Which experience from your CV best proves you can verify POs against quotes?","Maker-checker: verifying peers' cases for accuracy and completeness",["Hosting Zoom meetings","Portuguese with LATAM consumers","Using Workday self-service"],"Comparing two documents to catch errors is the same skill."],
+  ["accuracy","A customer says their labels must survive a freezer. Why does that matter for the quote?","It determines the material and adhesive",["It only affects the shipping method","It doesn't matter","It changes the label color"],"The application environment determines substrate and adhesive."],
+
+  ["coordination","A customer asks for an urgent expedite. What is your first step?","Check capacity with Production and materials with Purchasing",["Promise the date right away","Say expedites aren't possible","Charge the expedite fee immediately"],"Validate internally before committing to the customer."],
+  ["coordination","Production is late on an order. How do you explain it to the customer?","We have a delay in production. Here is the new date and your options.",["Production made a mistake, not me.","Say nothing and hope it arrives on time.","It's not my fault, I entered it correctly."],"The customer hears 'we', never blame."],
+  ["coordination","What makes a good request to another department?","Clear, complete information and an agreed deadline",["A short message: 'please check'","Copying the whole company","Calling only when it's already late"],"A complete request avoids back-and-forth."],
+  ["coordination","You disagree with a coworker's decision. What do you do?","Talk privately using facts and policy; if still stuck, go to the supervisor together",["Complain to other coworkers","Change it without telling them","Ignore it to avoid conflict"],"Stay professional and focus on the issue, not the person."],
+  ["coordination","An order is on credit hold. What do you do?","Inform the customer professionally and coordinate with Accounting to release it",["Ship it anyway","Cancel the order","Wait for Accounting to call the customer"],"Explain, coordinate, and update the customer on the date impact."],
+  ["coordination","Who do you contact to confirm material availability and ETA?","Purchasing / Planning",["Shipping","Only Production","The customer"],"The posting says Purchasing/Planning confirms materials and ETAs."],
+  ["coordination","Who do you coordinate with for carrier selection and special packaging?","Shipping",["Purchasing","The art department","Accounting"],"Shipping handles carriers, packaging and documentation."],
+
+  ["sales","A quote has had no response for 2 weeks. What do you do?","Send a short follow-up: ask for questions, remind them of the lead time, offer to adjust",["Forget it, they're not interested","Call them every day","Offer a 20% discount immediately"],"A polite, useful follow-up moves deals forward."],
+  ["sales","'Do you have sales experience?' What is the best answer for your profile?","Be honest, then show how you identified customer needs and how you'd drive reorders",["No, I'm not a salesperson.","Yes, a lot (even if it isn't true).","I don't really like selling."],"Be honest, then bridge to your transferable skills."],
+  ["sales","What is the best strategy for reorders?","Track each customer's reorder cycle and contact them before they run out",["Wait for customers to call","Email all customers the same offer every month","Only contact the biggest customers"],"Anticipating needs is proactive growth."],
+  ["sales","What does cross-sell mean?","Offering an additional related product",["Selling a bigger or premium version","Giving a discount","Repeating the same order"],"Upsell is a better or bigger version. Cross-sell is an additional product."],
+  ["sales","A customer receives defective labels. What is the best way to handle it?","Own it, create an RMA, arrange a replacement or credit, and share the cause with Production",["Ask them to prove it's not their printer","Tell them to contact Production","Send a new order without documentation"],"Fast ownership can turn a problem into loyalty."],
+
+  ["interview","What's the best structure for 'Tell me about yourself'?","Past experience → current role → why this job",["Personal life and hobbies first","Read the CV line by line","Start with salary expectations"],"A short career story that ends with why you fit."],
+  ["interview","'Why are you leaving Western Union?' What is the best answer?","I want a role closer to customers and to business growth.",["My manager doesn't value me.","The salary is too low.","I'm bored there."],"Move toward something positive. Never criticize your employer."],
+  ["interview","They ask why your CV mentions HR Benefits. What is the best approach?","Be honest and explain why this role fits your background better",["Say it was a mistake","Say you'll move to HR later","Avoid the question"],"Show genuine interest in this role."],
+  ["interview","'What is your biggest weakness?' What is the best answer?","I haven't used QuickBooks yet, and I've already started learning it.",["I'm a perfectionist.","I don't have any weaknesses.","I get angry with difficult customers."],"Real, not critical to the job, and paired with action."],
+  ["interview","'What are your salary expectations?' What is the best answer?","The upper end of the posted range, around ₡750,000 plus the bonus",["₡1,200,000","Whatever you want to pay me","I'd rather not say"],"Anchor in their range and stay open."],
+  ["interview","'Do you have any questions for us?' What do you do?","Ask 2–3 prepared questions about the role and how success is measured",["Say no, everything is clear","Ask only about salary","Ask about vacation days"],"Good questions show interest and preparation."],
+  ["interview","How should you talk about your AML cases?","Describe the process and the result, never names or confidential details",["Give full case details to be convincing","Refuse to talk about your work","Mention customer names to be specific"],"Discretion is itself a strength they will notice."],
+  ["interview","'Have you used Smartsheet?' What is the best answer?","Not yet, but I learned Western Union's systems quickly and I'd do the same.",["No.","Yes (even though you haven't).","No, but it's not important."],"Bridge formula: not yet, plus similar experience, plus how fast you learn."],
+  ["interview","What should you do within 24 hours after the interview?","Send a short thank-you email",["Call to ask if you got the job","Nothing, just wait","Connect with every employee on LinkedIn"],"A thank-you email reinforces your interest."],
+
+  ["vocab","What is a PO?","Purchase Order, the customer's official order document",["Production Order for the plant","Price Offer sent to the customer","Post Office shipping label"],"You verify the PO against the quote before entering the order."],
+  ["vocab","What is lead time?","The time from order to delivery",["The time a customer takes to pay","The time to answer an email","The production time for the first label only"],"Always confirm lead time with Production before committing."],
+  ["vocab","What is a proof?","A design sample the customer approves before printing",["Proof of delivery","A payment receipt","A quality test after shipping"],"Production can't start until the proof is signed."],
+  ["vocab","What is a die in label printing?","The cutting tool that gives the label its shape",["The ink used for color","The glue on the label","A damaged label"],"New shapes may need a die check."],
+  ["vocab","What is an RMA?","Return Merchandise Authorization",["Request for More Assistance","Reorder Material Approval","Regular Monthly Account"],"You create an RMA when a customer needs to return product."],
+  ["vocab","What is the substrate?","The label material, like paper, polypropylene or polyester",["The glue","The printer ribbon","The shipping box"],"The substrate depends on the application environment."],
+  ["vocab","What is a credit hold?","An order paused because of a payment or credit issue",["A discount for loyal customers","A refund to the customer","A hold for missing materials"],"Coordinate with Accounting and inform the customer."],
+  ["vocab","What is a packing slip?","The document inside the box listing what was shipped",["The invoice","The production instructions","The carrier's tracking label"],"Work orders go to Production; packing slips go with the shipment."],
+  ["vocab","What is Pacific Barcode's main value proposition?","Helping customers print color labels on demand instead of buying pre-printed labels",["Selling the cheapest black-and-white labels","Shipping labels internationally only","Manufacturing barcode scanners"],"Faster, more flexible, compliant color labeling with clear ROI."],
+  ["vocab","What does 'upsell' mean?","Offering a better or larger version of what the customer is buying",["Offering a different related product","Reducing the price","Repeating the last order"],"Different related product is cross-sell."],
+
+  ["english","You didn't understand the question. What do you say?","Could you repeat the question, please?",["What?","Repeat.","Say again."],"Polite and professional."],
+  ["english","You need a moment to think. What do you say?","That's a great question. Let me think of a good example.",["Wait, wait.","Hmm… I don't know.","Next question, please."],"It buys time while still sounding confident."],
+  ["english","Which sentence is correct?","I have been working at Western Union for 10 years.",["I am working at Western Union since 10 years.","I work at Western Union since 10 years.","I have work at Western Union during 10 years."],"Present perfect continuous, with 'for' plus a period of time."],
+  ["english","Which sentence is correct?","I'm responsible for managing a daily caseload.",["I'm responsible to manage a daily caseload.","I'm responsible of managing a daily caseload.","I'm responsable for manage a daily caseload."],"'Responsible for' + verb-ing."],
+  ["english","Which email closing is correct?","I look forward to hearing from you.",["I look forward to hear from you.","I look forward hearing from you.","I wait to hear you."],"'Look forward to' + verb-ing."],
+  ["english","Which sentence is correct for a STAR story about the past?","Last year I handled more than 50 requests a day.",["Last year I handle more than 50 requests a day.","Last year I have handled more than 50 requests a day.","Last year I was handle more than 50 requests a day."],"STAR stories use the simple past."],
+  ["english","Which sentence is correct?","I'm interested in this position.",["I'm interesting in this position.","I'm interested on this position.","I'm interest in this position."],"'Interested in'. 'Interesting' describes things, not how you feel."],
+  ["english","Which is the correct way to talk about your experience?","I have experience in customer service.",["I have experiences on customer service.","I am experience in customer service.","I have experiencie in customer service."],"'Experience in' a field, usually without a plural."]
+];
+
+const bank = QB.map((r, i) => ({ id: i, skill: r[0], q: r[1], a: r[2], w: r[3], why: r[4] }));
+document.getElementById("qz-total").textContent = bank.length;
+const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+const shuffle = arr => { const a = arr.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+const qstats = store.get("pb-quiz-stats", {});
+const qmissed = store.get("pb-quiz-missed", {});
+const app = document.getElementById("quiz-app");
+const setup = { skill: "all", len: 10 };
+let S = null;
+
+function renderSetup() {
+  S = null;
+  const nm = Object.keys(qmissed).length;
+  const chips = [["all", "All topics", bank.length]].concat(Object.entries(SK).map(([k, v]) => [k, v.n, bank.filter(b => b.skill === k).length]));
+  app.innerHTML = `
+    <div class="qz-setup">
+      <div><p class="qz-label">Topic</p><div class="chips">${chips.map(([k, n, c]) => `<button type="button" class="chip" data-skill="${k}" aria-pressed="${setup.skill === k}">${n} <span class="cnt">${c}</span></button>`).join("")}</div></div>
+      <div><p class="qz-label">Number of questions</p><div class="chips">${[10, 20, 0].map(n => `<button type="button" class="chip" data-len="${n}" aria-pressed="${setup.len === n}">${n || "All"}</button>`).join("")}</div></div>
+      <div class="qz-actions">
+        <button type="button" class="btn primary" id="qz-start">Start quiz</button>
+        <button type="button" class="btn" id="qz-weak">Practice weak areas</button>
+        <button type="button" class="btn" id="qz-missed" ${nm ? "" : "disabled"}>Review my mistakes (${nm})</button>
+      </div>
+      <p class="qz-note">When you miss a question you get a similar question on the same topic right away, and the one you missed comes back a few questions later with the options in a new order. "Practice weak areas" picks the topics where your score is lowest or that you haven't tried yet.</p>
+    </div>`;
+  app.querySelectorAll("[data-skill]").forEach(b => b.onclick = () => { setup.skill = b.dataset.skill; renderSetup(); });
+  app.querySelectorAll("[data-len]").forEach(b => b.onclick = () => { setup.len = +b.dataset.len; renderSetup(); });
+  app.querySelector("#qz-start").onclick = () => {
+    let pool = shuffle(bank.filter(b => setup.skill === "all" || b.skill === setup.skill));
+    if (setup.len) pool = pool.slice(0, setup.len);
+    startQuiz(pool.map(b => b.id));
+  };
+  app.querySelector("#qz-weak").onclick = () => {
+    const ranked = Object.keys(SK).map(k => { const s = qstats[k]; return [k, s && s.a ? s.c / s.a : -1]; }).sort((x, y) => x[1] - y[1]);
+    const pick = ranked.slice(0, 3).map(r => r[0]);
+    startQuiz(shuffle(bank.filter(b => pick.includes(b.skill))).slice(0, 10).map(b => b.id));
+  };
+  if (nm) app.querySelector("#qz-missed").onclick = () => startQuiz(shuffle(Object.keys(qmissed).map(Number)));
+}
+
+function startQuiz(ids) {
+  S = { queue: ids.map(id => ({ id, kind: "new" })), i: 0, asked: new Set(), log: [], extra: 0, streak: 0 };
+  renderQ();
+  app.scrollIntoView({ block: "start" });
+}
+
+function scoreHtml() {
+  const ok = S.log.filter(l => l.ok).length;
+  return `<span class="okc">✓ ${ok}</span> <span class="noc">✗ ${S.log.length - ok}</span>${S.streak >= 3 ? ` <span class="streak">· ${S.streak} in a row</span>` : ""}`;
+}
+
+function renderQ() {
+  const it = S.queue[S.i], q = bank[it.id];
+  S.opts = shuffle([q.a].concat(q.w));
+  S.answered = false;
+  const badge = it.kind === "similar" ? `<span class="badge sim">Similar question</span>` : it.kind === "retry" ? `<span class="badge retry">Second chance</span>` : "";
+  app.innerHTML = `
+    <div class="qz-top"><span class="qz-count">Question ${S.i + 1} of ${S.queue.length}</span><span class="qz-score">${scoreHtml()}</span></div>
+    <div class="meter qz-meter"><i style="width:${S.i / S.queue.length * 100}%"></i></div>
+    <div class="qz-tags"><span class="tag">${SK[q.skill].n}</span>${badge}</div>
+    <h3 class="qz-q" tabindex="-1">${esc(q.q)}</h3>
+    <div class="opts">${S.opts.map((o, k) => `<button type="button" class="opt" data-k="${k}"><span class="k">${"ABCD"[k]}</span><span>${esc(o)}</span></button>`).join("")}</div>
+    <div class="fb" id="qz-fb" hidden></div>
+    <div class="qz-foot"><button type="button" class="linkbtn" id="qz-quit">End quiz and see results</button><span>Keyboard: 1–4 to answer, Enter for next</span></div>`;
+  app.querySelectorAll(".opt").forEach(b => b.onclick = () => answer(+b.dataset.k));
+  app.querySelector("#qz-quit").onclick = renderEnd;
+}
+
+function answer(k) {
+  if (!S || S.answered) return;
+  S.answered = true;
+  const it = S.queue[S.i], q = bank[it.id], ok = S.opts[k] === q.a;
+  const st = qstats[q.skill] || (qstats[q.skill] = { c: 0, a: 0 });
+  st.a++; if (ok) st.c++;
+  store.set("pb-quiz-stats", qstats);
+  if (ok) delete qmissed[q.id]; else qmissed[q.id] = true;
+  store.set("pb-quiz-missed", qmissed);
+  S.log.push({ id: q.id, ok });
+  S.asked.add(q.id);
+  S.streak = ok ? S.streak + 1 : 0;
+
+  let added = "";
+  if (!ok && S.extra < 20) {
+    const upcoming = new Set(S.queue.slice(S.i + 1).map(x => x.id));
+    const sims = bank.filter(b => b.skill === q.skill && b.id !== q.id && !S.asked.has(b.id) && !upcoming.has(b.id));
+    if (sims.length) {
+      S.queue.splice(S.i + 1, 0, { id: sims[Math.floor(Math.random() * sims.length)].id, kind: "similar" });
+      S.extra++; added = "Next: a similar question on the same topic. ";
+    }
+    if (it.kind !== "retry") {
+      S.queue.splice(Math.min(S.i + 4, S.queue.length), 0, { id: q.id, kind: "retry" });
+      S.extra++; added += "This question will come back in a few turns.";
+    }
+  }
+
+  app.querySelectorAll(".opt").forEach((b, i) => {
+    b.disabled = true;
+    if (S.opts[i] === q.a) b.classList.add("correct");
+    else if (i === k) b.classList.add("wrong");
+    else b.classList.add("dim");
+  });
+  app.querySelector(".qz-score").innerHTML = scoreHtml();
+  app.querySelector(".qz-count").textContent = `Question ${S.i + 1} of ${S.queue.length}`;
+  const fb = app.querySelector("#qz-fb");
+  fb.hidden = false;
+  fb.className = "fb " + (ok ? "ok" : "no");
+  fb.innerHTML = `
+    <p class="fb-h">${ok ? "Correct" : "Not quite"}</p>
+    ${ok ? "" : `<p><strong>Best answer:</strong> ${esc(q.a)}</p>`}
+    ${q.why ? `<p>${esc(q.why)}</p>` : ""}
+    ${added ? `<p class="fb-next">${added}</p>` : ""}
+    ${ok ? "" : `<p><a href="${SK[q.skill].h}">Review this topic in the guide</a></p>`}
+    <button type="button" class="btn primary" id="qz-next">${S.i + 1 < S.queue.length ? "Next question" : "See results"}</button>`;
+  const nb = app.querySelector("#qz-next");
+  nb.onclick = next;
+  nb.focus({ preventScroll: true });
+  renderMastery();
+}
+
+function next() {
+  if (!S) return;
+  S.i++;
+  if (S.i >= S.queue.length) renderEnd(); else renderQ();
+}
+
+function renderEnd() {
+  if (!S || !S.log.length) { renderSetup(); return; }
+  const n = S.log.length, ok = S.log.filter(l => l.ok).length, pct = Math.round(ok / n * 100);
+  const msg = pct >= 85 ? "Excellent. You're ready on these topics." : pct >= 60 ? "Good work. Review the questions below and try your mistakes again." : "Keep practicing. Read the guide sections for these topics, then retry your mistakes.";
+  const last = {};
+  S.log.forEach(l => { last[l.id] = l.ok; });
+  const stillMissed = Object.keys(last).filter(id => !last[id]).map(Number);
+  const everMissed = [...new Set(S.log.filter(l => !l.ok).map(l => l.id))];
+  app.innerHTML = `
+    <p class="qz-label">Your result</p>
+    <p class="end-score">${pct}%</p>
+    <p class="end-msg">${ok} correct out of ${n} answers. ${msg}</p>
+    ${everMissed.length ? `<p class="qz-label">Questions to review</p><ul class="end-list">${everMissed.map(id => `<li>${esc(bank[id].q)}<b>${esc(bank[id].a)}</b></li>`).join("")}</ul>` : `<p class="end-msg">No mistakes in this round.</p>`}
+    <div class="qz-actions">
+      ${everMissed.length ? `<button type="button" class="btn primary" id="qz-retry">Practice these ${everMissed.length} again</button>` : ""}
+      <button type="button" class="btn${everMissed.length ? "" : " primary"}" id="qz-new">New quiz</button>
+    </div>`;
+  const r = app.querySelector("#qz-retry");
+  if (r) r.onclick = () => startQuiz(shuffle(everMissed));
+  app.querySelector("#qz-new").onclick = renderSetup;
+  S = null;
+  renderMastery();
+  app.scrollIntoView({ block: "start" });
+}
+
+let resetArmed = false;
+function renderMastery() {
+  const el = document.getElementById("quiz-mastery");
+  const rows = Object.entries(SK).map(([k, v]) => {
+    const s = qstats[k];
+    const p = s && s.a ? Math.round(s.c / s.a * 100) : null;
+    const color = p === null ? "var(--line)" : p >= 80 ? "var(--ok)" : p >= 60 ? "var(--y)" : "var(--bad-fg)";
+    return `<div class="ms-row"><a href="${v.h}">${v.n}</a><div class="ms-bar"><i style="width:${p || 0}%;background:${color}"></i></div><span class="ms-val">${p === null ? "Not tried yet" : `${p}% · ${s.c}/${s.a}`}</span></div>`;
+  }).join("");
+  const total = Object.values(qstats).reduce((t, s) => t + s.a, 0);
+  el.innerHTML = `<div class="ms">${rows}</div>
+    <div class="ms-foot"><span>${total} answers in total. Green: 80% or more. Saved in this browser.</span>
+    <button type="button" class="linkbtn" id="qz-reset">${resetArmed ? "Click again to erase all quiz progress" : "Reset quiz progress"}</button></div>`;
+  el.querySelector("#qz-reset").onclick = () => {
+    if (!resetArmed) { resetArmed = true; renderMastery(); return; }
+    resetArmed = false;
+    Object.keys(qstats).forEach(k => delete qstats[k]);
+    Object.keys(qmissed).forEach(k => delete qmissed[k]);
+    store.set("pb-quiz-stats", qstats); store.set("pb-quiz-missed", qmissed);
+    renderMastery(); if (!S) renderSetup();
+  };
+}
+
+document.addEventListener("keydown", e => {
+  if (!S || !app.querySelector("#qz-fb")) return;
+  const r = app.getBoundingClientRect();
+  if (r.bottom < 0 || r.top > window.innerHeight) return;
+  const k = "1234".indexOf(e.key);
+  if (!S.answered && k >= 0 && k < S.opts.length) { e.preventDefault(); answer(k); }
+  else if (S.answered && e.key === "Enter" && document.activeElement?.id !== "qz-next") { e.preventDefault(); next(); }
+});
+
+renderSetup();
+renderMastery();
 
 const bc = document.getElementById("barcode");
 [3,1,2,1,1,3,2,1,1,2,3,1,1,1,2,2,1,3,1,2,1,1,2,3,1,2,1,1,3,1,2,2,1,1,3,1,2,1,1,2,3,1,1,2,1,3,1,1,2,1]
